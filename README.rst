@@ -30,7 +30,6 @@ This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
 * `Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
-* `Register <https://github.com/adafruit/Adafruit_CircuitPython_Register>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -96,7 +95,7 @@ Usage Example
 
 	import board
 	import adafruit_mlx90632
-	
+
 	i2c = board.I2C()
 	mlx = adafruit_mlx90632.MLX90632(i2c)
 
