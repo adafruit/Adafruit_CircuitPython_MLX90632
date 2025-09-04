@@ -93,11 +93,23 @@ Usage Example
 
 .. code-block:: python
 
+	import time
 	import board
 	import adafruit_mlx90632
 
 	i2c = board.I2C()
 	mlx = adafruit_mlx90632.MLX90632(i2c)
+
+	while True:
+	    # Check if new data is available
+	    if mlx.data_ready:
+	        # Read temperatures
+	        ambient_temp = mlx.ambient_temperature
+	        object_temp = mlx.object_temperature
+	        print(f"Ambient: {ambient_temp:.2f}°C, Object: {object_temp:.2f}°C")
+	        # Reset new data flag
+	        mlx.reset_data_ready()
+	    time.sleep(0.1)
 
 Documentation
 =============
